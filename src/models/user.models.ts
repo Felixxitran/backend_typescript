@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
   }
 )
 
-//presave schema
+//hash password and save user 
 userSchema.pre('save', async function (next) {
   var user = this as UserDocument
   if (!user.isModified('password')) {
